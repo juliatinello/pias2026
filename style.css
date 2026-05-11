@@ -12,25 +12,37 @@ header {
     grid-area: cabeca;
     background-color: #492b29;
     font-family: Arial, Helvetica, sans-serif;
-}
+}   
 
-#header-container {
-    display: grid;
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-areas: "logo titulo nada";
-}
-
-.header-text {
-    grid-area: titulo;
-    font-family: Arial, Helvetica, sans-serif;
+.menu {
+    display: flex;
     text-align: center;
-    white-space: nowrap
+    justify-content: center; 
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    transition: 0.3s ease;
+    padding: 4px;
+}
+
+.menu a:hover{
+    color: black;
+    text-decoration: none;
+    background-color: #f5bc19;
+    border-radius: 3px;
 }
 
 .logo {
     grid-area: logo;
-    height: 250px;
+    height: 230px;
     width: auto;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 header h1 {

@@ -1,98 +1,25 @@
-body {
-    display: grid;
-    grid-template-areas: 
-        "cabeca cabeca cabeca"
-        "braco corpo corpo"
-        "perna perna perna";
-    grid-template-rows: 0 1000px 150px;
-    grid-template-columns: 250px auto auto;
-}
-
-header {
-    grid-area: cabeca;
-    background-color: #492b29;
-    font-family: Arial, Helvetica, sans-serif;
-}   
-
-.menu {
-    display: flex;
-    text-align: center;
-    justify-content: center; 
-}
-
-.menu a{
-    text-decoration: none;
-    font-size: large;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    transition: 0.3s ease;
-    padding: 4px;
-}
-
-.menu a:hover{
-    color: black;
-    text-decoration: none;
-    background-color: #f5bc19;
-    border-radius: 3px;
-}
-
-.logo {
-    grid-area: logo;
-    height: 230px;
-    width: auto;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-header h1 {
-    font-size: xx-large;
-    margin-top: 50px;
-}
-
-header h2 {
-    font-size: x-large;
-    margin-top: 85px;
-}
-
-header h3 {
-    font-size: medium;
-    margin-top: 115px;
-}
-
-aside {
-    grid-area: braco;
-    background-color: #492b29;
-}
-
-main {
+#inicio {
     grid-area: corpo;
-    background-image: url(img/fundocreme.png);
+    background-color: #ffe8bb;
     width: 100%;
     background-size: contain;
     padding: 20px;
 }
 
-footer {
-    grid-area: perna;
-    background-color: #492b29;
+.apresentacao {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    width: 400px;
+    padding: 200px;
 }
 
-@media only screen and (max-width: 1000px) {
-    .logo {
-        visibility: hidden;
-    }
-}
-
-@media only screen and (max-width: 800px) { 
-    body {
-        grid-template-areas: "cabeca"
-                             "corpo"
-                             "perna";
-        grid-template-columns: auto;
-        grid-template-rows: 200px auto 200px;
-    }
-    aside {
-        display: none;
-    }
+#meio {
+    grid-area: corpo;
+    background-image: url(img/fundomarrom.png);
+    width: 100%;
+    background-size: contain;
+    padding: 20px;
+    height: 800px;
 }

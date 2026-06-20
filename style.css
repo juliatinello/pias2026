@@ -1,25 +1,93 @@
+.menu{
+    position: sticky;
+    top: 0;
+    background-color: #fcfdf8;
+    height: 45px;            
+    width: 100%;           
+    z-index: 1000;  
+    display: flex;
+    justify-content: center;
+    align-items: center;       
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #48332f;
+    transition: 0.3s ease;
+    padding: 4px;
+}
+
+.menu a:hover{
+    color: #48332f;
+    text-decoration: underline;
+}
+
+.menu li{
+    display: inline;
+    padding: 50px;
+}
+
 #inicio {
-    grid-area: corpo;
     background-color: #ffe8bb;
     width: 100%;
     background-size: contain;
-    padding: 20px;
+    padding: 50px; 
+    gap: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .apresentacao {
     font-size: xx-large;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #48332f;
     display: flex;
     width: 400px;
-    padding: 200px;
 }
 
-#meio {
-    grid-area: corpo;
+.showup {
+    width: 300px;
+}
+
+
+#assinaturas {
     background-image: url(img/fundomarrom.png);
     width: 100%;
     background-size: contain;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.planos {
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.ass-titulo {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 10px;
+}
+
+.ass {
+    width: 350px;
+    height: 450px;
+}
+
+#vazio {
+    background-image: url(img/fundocreme.png);
+    width: 100%;
+    background-size: contain;
     padding: 20px;
-    height: 800px;
 }

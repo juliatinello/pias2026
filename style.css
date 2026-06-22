@@ -25,6 +25,12 @@ body {
 
 .showup {
     width: 300px;
+    transform: scale(1);
+    transition: 0.3s ease;  
+}
+
+.showup:hover {
+    transform: scale(1.05); 
 }
 
 #sobre {

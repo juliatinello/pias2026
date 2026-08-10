@@ -47,9 +47,21 @@ body {
     margin: 70px;
 }
 
-#topensando {
+#como-funciona2 {
     background-color: #ffe8bb;
-    width: 100%;
+    width: 80%;
+    height: 400px;
+    padding: 50px; 
+    gap: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 8px;
+}
+
+#como-funciona2 {
+    background-color: #ffe8bb;
+    width: 80%;
     height: 400px;
     padding: 50px; 
     gap: 300px;

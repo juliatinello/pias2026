@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patinhas Felizes</title>
+  <meta name="description" content="Arrecada dinheiro para auxiliar ONGs e financiar meu projeto juntamente de minha equipe.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa">
+    <p class="marca">Patinhas Felizes</p>
+    <nav>
+      <a href="#problema">O problema</a>
+      <a href="#cadastrar">Cadastrar</a>
+      <a href="#mural">Mural</a>
+    </nav>
+  </div>
+</header>
+
+<section class="capa">
+  <img src="imagens/capa.jpg" alt="TROQUE: descreva a foto de capa">
+  <div class="capa-conteudo-lateral">
+    <div class="capa-texto">
+      <h1>TROQUE: sua frase principal, ate 12 palavras</h1>
+      <p>Arrecada dinheiro para auxiliar ONGs e financiar meu projeto juntamente de minha equipe.</p>
+      <a class="botao" href="#cadastrar">Cadastrar agora</a>
+    </div>
+    <img src="img/logo.png" alt="Logo Patinhas Felizes" class="capa-logo">
+  </div>
+</section>
+
+<main>
+
+<section id="problema" class="bloco">
+  <h2>O problema</h2>
+  <p class="largura-texto">Abandono de animais domésticos.</p>
+  <p class="largura-texto"><b>Quem sofre com isso:</b> Animais em situação de rua.</p>
+  <p class="largura-texto"><b>Onde acontece:</b> Estado do Paraná.</p>
+  <div class="galeria">
+    <figure>
+      <img src="imagens/foto1.jpg" alt="TROQUE: descreva a foto 1">
+      <figcaption>TROQUE: onde foi, quando foi, o que mostra.</figcaption>
+    </figure>
+    <figure>
+      <img src="imagens/foto2.jpg" alt="TROQUE: descreva a foto 2">
+      <figcaption>TROQUE: onde foi, quando foi, o que mostra.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>Os numeros do projeto</h2>
+  <p class="largura-texto">Indicador: número de ações cadastradas por moradores diferentes em 4 semanas</p>
+  <div class="painel" id="painel"></div>
+</section>
+
+<section id="cadastrar" class="bloco">
+  <h2>Registrar</h2>
+  <form id="formulario" class="formulario">
+    <div class="campo">
+      <label for="patinhasFelizes">Patinhas Felizes</label>
+      <input type="text" id="patinhasFelizes" maxlength="80" required>
+    </div>
+    <div class="campo">
+      <label for="socialEAmbiental">Social e ambiental</label>
+      <select id="socialEAmbiental" required>
+        <option>Ambiental</option>
+        <option>Social</option>
+        <option>Educação</option>
+        <option>Saúde</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="parana">Paraná</label>
+      <input type="text" id="parana" maxlength="80" required>
+    </div>
+    <div class="campo">
+      <label for="3">3</label>
+      <input type="number" id="3" min="0" step="1" required>
+    </div>
+    <div class="campo largo">
+      <label for="fotosELogo">Fotos e logo</label>
+      <textarea id="fotosELogo" rows="3" maxlength="300" required></textarea>
+    </div>
+    <button type="submit" class="botao">Salvar</button>
+    <p id="aviso" class="aviso" role="status"></p>
+  </form>
+</section>
+
+<section id="mural" class="bloco">
+  <h2>Mural</h2>
+  <div class="ferramentas">
+    <div class="ferramenta">
+      <label for="busca">Buscar</label>
+      <input type="text" id="busca" placeholder="digite uma palavra">
+    </div>
+    <div class="ferramenta">
+      <label for="filtro">Social e ambiental</label>
+      <select id="filtro">
+        <option value="todas">Todas</option>
+        <option>Ambiental</option>
+        <option>Social</option>
+        <option>Educação</option>
+        <option>Saúde</option>
+      </select>
+    </div>
+    <div class="ferramenta">
+      <label for="exportar">Dados</label>
+      <div class="grupo-botoes">
+        <button type="button" id="exportar" class="botao-fino">Baixar</button>
+        <label for="importar" class="botao-fino">Carregar</label>
+        <input type="file" id="importar" accept="application/json" hidden>
+        <button type="button" id="limpar" class="botao-fino perigo">Apagar tudo</button>
+      </div>
+    </div>
+  </div>
+  <div id="lista" class="lista"></div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>TROQUE: nomes da equipe, turma, escola e ano.</p>
+  <p class="miudo">ODS 17 (Parcerias e meios de implementação). Os dados ficam salvos apenas neste navegador. Protótipo escolar.</p>
+  <p class="miudo">Fontes dos dados citados: TROQUE ou apague esta linha.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

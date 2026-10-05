@@ -57,7 +57,7 @@ a{ color: var(--marca); }
 
 .capa-conteudo-lateral{
   position: absolute; inset: 0;
-  max-width: var(--largura); margin: 0 auto; padding: 2rem 1.2rem;
+  max-width: 1300px; margin: 0 auto; padding: 2rem 1.2rem;
   display: flex; align-items: center; justify-content: space-between; gap: 2rem;
   color: #c2dcff;
   flex-wrap: wrap; /* Se a tela for pequena, ajusta os elementos empilhando-os */
@@ -73,8 +73,8 @@ a{ color: var(--marca); }
 .capa-texto p{ max-width: 46ch; }
 
 .capa-logo{
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
   border-radius: 50%;
   background-color: #fcfcf9;
@@ -115,7 +115,7 @@ select:focus-visible, textarea:focus-visible, label:focus-visible{
   margin-top: 1.5rem; display: grid; gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-.galeria img{ height: 220px; object-fit: cover; width: 100%; }
+.galeria img{ height: 220px; object-fit: cover; width: 400px; }
 figcaption{
   font-size: .85rem; margin-top: .5rem;
   border-left: 4px solid var(--sinal); padding-left: .6rem;
@@ -188,7 +188,7 @@ input, select, textarea{
 
 /* --------- RODAPE --------- */
 .rodape{ background: var(--tinta); color: #d8ddd6; padding: 2rem 1.2rem; text-align: center; }
-.miudo{ font-size: .8rem; color: #97a19b; margin-top: .4rem; }
+.miudo{ font-size: .8rem; color: #97a19b; margin-top: 20px; }
 
 /* --------- CELULAR --------- */
 /* Tudo aqui dentro so vale em telas de ate 640px de largura */
@@ -197,4 +197,14 @@ input, select, textarea{
   .capa img{ height: 340px; }
   .bloco{ padding: 2rem 1rem; }
   .ferramentas{ flex-direction: column; align-items: stretch; }
+}
+
+.governo {
+  height: 180px;
+  padding-right: 100px;
+}
+
+.ccm {
+  height: 180px;
+  padding-left: 100px;
 }

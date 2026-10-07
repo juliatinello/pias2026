@@ -21,16 +21,16 @@
 </header>
 
 <section class="capa">
-  <img src="img/fundomarrom.png" alt="TROQUE: descreva a foto de capa">
+  <img src="img/fundomarrom-extra.png" alt="fundo marrom com patinhas">
   <div class="capa-conteudo-lateral">
-    <img class="governo" src="img/estado_governo_sembg.png" alt="">
+    <img class="governo" src="img/estado_governo_sembg.png" alt="logo govervo paranaense">
     <div class="capa-texto">
-      <h1>PATINHAS FELIZES: Cada patinha faz a diferença!</h1>
-      <p>Doe para ONGs confiáveis, fornecendo uma segunda oportunidade para animais abandonados ou em situção de maus-tratos.</p>
+      <h1 class="texto-capa">PATINHAS FELIZES: Cada patinha faz a diferença!</h1>
+      <p class="texto-capa">Doe para ONGs confiáveis, fornecendo uma segunda oportunidade para animais abandonados ou em situção de maus-tratos.</p>
       <a class="botao" href="#cadastrar">Cadastrar agora</a>
     </div>
     <img src="img/logo.png" alt="Logo Patinhas Felizes" class="capa-logo">
-    <img class="ccm" src="img/ccm_logo-sembg.png" alt="">
+    <img class="ccm" src="img/ccm_logo-sembg.png" alt="logo colégio cívico militar paranaense">
   </div>
 </section>
 
@@ -39,22 +39,23 @@
 <section id="problema" class="bloco">
   <h2>Projeto Patinhas Felizes no Paraná</h2>
   <p class="largura-texto">O PPF busca ajudar animais abadonados, oferecendo uma segunda chance para que cachorros e gatos sejam tratados com carinho, amor e dignidade.</p>
-  <p class="largura-texto"><b>Quem sofre com isso:</b> Animais em situação de rua.</p>
-  <p class="largura-texto"><b>Onde acontece:</b> Estado do Paraná.</p>
+  <p class="largura-texto">80% do dinheiro arrecadado é distribuído entre diversas ONGs no Paraná, conforme a necessidade individual de cada uma. Os outros 20% do dinheiro é direcionado para os fundos do PPF, que no futuro contará com instituições físicas em todo o Estado, mantendo seus princípios com a ética animal.</p>
+  <p class="largura-texto"><b>Por que ajudar?</b> A PPF acredita que todos, independente da espécie, raça ou idade, merecem viver com dignidade. Sua ajuda é fundamental para o resgate e a manuntenção dos abrigos destinados aos animais reasgatados.</p>
+  <p class="largura-texto"><b>Como contribuir?</b> As doações monetárias podem ser realizadas direto pelo site da PPF, mas você também pode ajudar reportando animais abandonados, acionando o resgate pela ONG mais próxima de você!</p>
   <div class="galeria">
     <figure>
-      <img class="bicho triste" src="img/1.png" alt="TROQUE: descreva a foto 1">
-      <figcaption>TROQUE: onde foi, quando foi, o que mostra.</figcaption>
+      <img class="bicho triste" src="img/cachorro-triste.png" alt="cachorro triste">
+      <figcaption>Cachorro adulto abadonado próximo ao Shopping JL, Foz do Iguaçu.</figcaption>
     </figure>
     <figure>
-      <img src="imagens/foto2.jpg" alt="TROQUE: descreva a foto 2">
-      <figcaption>TROQUE: onde foi, quando foi, o que mostra.</figcaption>
+      <img src="img/gato-triste.png" alt="gato triste">
+      <figcaption>Gato filhote abandonado no bairro Carimã, Foz do Iguaçu.</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="bloco">
-  <h2>Os numeros do projeto</h2>
+  <h2>Os números do projeto</h2>
   <p class="largura-texto">Indicador: número de ações cadastradas por moradores diferentes em 4 semanas</p>
   <div class="painel" id="painel"></div>
 </section>
@@ -63,32 +64,123 @@
   <h2>Registrar</h2>
   <form id="formulario" class="formulario">
     <div class="campo">
-      <label for="patinhasFelizes">Patinhas Felizes</label>
-      <input type="text" id="patinhasFelizes" maxlength="80" required>
-    </div>
-    <div class="campo">
-      <label for="socialEAmbiental">Social e ambiental</label>
-      <select id="socialEAmbiental" required>
-        <option>Ambiental</option>
-        <option>Social</option>
-        <option>Educação</option>
-        <option>Saúde</option>
+      <label for="animal">Animal</label>
+      <select id="animal" required>
+        <option value="Cachorro">Cachorro</option>
+        <option value="Gato">Gato</option>
+        <option value="Cachorro e gato">Cachorro e gato</option>
       </select>
     </div>
     <div class="campo">
-      <label for="parana">Paraná</label>
-      <input type="text" id="parana" maxlength="80" required>
+      <label for="quantidade">Quantidade de animais encontrados</label>
+      <input type="number" id="quantidade" min="0" step="1" required>
     </div>
     <div class="campo">
-      <label for="3">3</label>
-      <input type="number" id="3" min="0" step="1" required>
+      <label for="tamanho">Tamanho do animal encontrado</label>
+      <select id="tamanho" required>
+        <option value="Pequeno porte">Pequeno porte</option>
+        <option value="Médio porte">Médio porte</option>
+        <option value="Grande porte">Grande porte</option>
+        <option value="Portes variados">Portes variados</option>
+      </select>
     </div>
-    <div class="campo largo">
-      <label for="fotosELogo">Fotos e logo</label>
-      <textarea id="fotosELogo" rows="3" maxlength="300" required></textarea>
+    <div class="campo">
+      <label for="cidade">Cidade onde o animal foi encontrado</label>
+      <input type="text" id="cidade" maxlength="80" required>
     </div>
-    <button type="submit" class="botao">Salvar</button>
-    <p id="aviso" class="aviso" role="status"></p>
+    <div class="campo">
+  <label for="ong">ONG disponível para resgate</label>
+
+  <select id="ong" required>
+    <option value="">Selecione uma ONG</option>
+
+    <option value="Almirante Tamandaré" data-numero="(41) 0000-0001">
+      Almirante Tamandaré
+    </option>
+
+    <option value="Apucarana" data-numero="(43) 0000-0002">
+      Apucarana
+    </option>
+
+    <option value="Araucária" data-numero="(41) 0000-0003">
+      Araucária
+    </option>
+
+    <option value="Arapongas" data-numero="(43) 0000-0004">
+      Arapongas
+    </option>
+
+    <option value="Cambé" data-numero="(43) 0000-0005">
+      Cambé
+    </option>
+
+    <option value="Campo Largo" data-numero="(41) 0000-0006">
+      Campo Largo
+    </option>
+
+    <option value="Campo Mourão" data-numero="(44) 0000-0007">
+      Campo Mourão
+    </option>
+
+    <option value="Cascavel" data-numero="(45) 0000-0008">
+      Cascavel
+    </option>
+
+    <option value="Curitiba" data-numero="(41) 0000-0009">
+      Curitiba
+    </option>
+
+    <option value="Foz do Iguaçu" data-numero="(45) 0000-0010">
+      Foz do Iguaçu
+    </option>
+
+    <option value="Francisco Beltrão" data-numero="(46) 0000-0011">
+      Francisco Beltrão
+    </option>
+
+    <option value="Guarapuava" data-numero="(42) 0000-0012">
+      Guarapuava
+    </option>
+
+    <option value="Londrina" data-numero="(43) 0000-0013">
+      Londrina
+    </option>
+
+    <option value="Maringá" data-numero="(44) 0000-0014">
+      Maringá
+    </option>
+
+    <option value="Paranaguá" data-numero="(41) 0000-0015">
+      Paranaguá
+    </option>
+
+    <option value="Pato Branco" data-numero="(46) 0000-0016">
+      Pato Branco
+    </option>
+
+    <option value="Pinhais" data-numero="(41) 0000-0017">
+      Pinhais
+    </option>
+
+    <option value="Ponta Grossa" data-numero="(42) 0000-0018">
+      Ponta Grossa
+    </option>
+
+    <option value="São José dos Pinhais" data-numero="(41) 0000-0019">
+      São José dos Pinhais
+    </option>
+
+    <option value="Toledo" data-numero="(45) 0000-0020">
+      Toledo
+    </option>
+  </select>
+</div>
+
+<div class="campo">
+  <label for="numeroOng">Número da ONG</label>
+  <input type="text" id="numeroOng" readonly>
+</div>
+  <button type="submit" class="botao">Cadastrar registro</button>
   </form>
 </section>
 
@@ -131,6 +223,7 @@
   <p class="miudo">ODS 17 (Parcerias e meios de implementação). Os dados ficam salvos apenas neste navegador. Protótipo escolar.</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>

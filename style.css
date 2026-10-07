@@ -10,9 +10,9 @@
   --tinta:  #492b29;   /* cor do texto */
   --papel:  #f2daac;   /* fundo da pagina */
   --marca:  #1f4e79;   /* cor principal, botoes e barras */
-  --sinal:  #c2dcff;   /* cor de destaque */
+  --sinal:  #8bb2e4;   /* cor de destaque */
   --alerta: #a34123;   /* cor de apagar */
-  --borda:  #ccd2c8;
+  --borda:  #8bb2e4;
   --largura: 1080px;   /* largura maxima do conteudo */
 }
 
@@ -26,12 +26,31 @@ body{
   line-height: 1.6;
 }
 
-h1,h2,h3{ font-family: Georgia, 'Times New Roman', serif; line-height: 1.15; }
-h1{ font-size: 2.2rem; }
-h2{ font-size: 1.6rem; margin-bottom: .8rem; }
-h3{ font-size: 1.1rem; }
-img{ max-width: 100%; display: block; }
-a{ color: var(--marca); }
+h1,h2,h3{ 
+  font-family: Georgia, 'Times New Roman', serif; 
+  line-height: 1.15; 
+}
+
+h1{ 
+  font-size: 2.2rem; 
+}
+h2{ 
+  font-size: 1.6rem; 
+  margin-bottom: .8rem; 
+}
+
+h3{ 
+  font-size: 1.1rem; 
+}
+
+img{ 
+  max-width: 100%; 
+  display: block; 
+}
+
+a{ 
+  color: var(--marca); 
+}
 
 /* --------- TOPO --------- */
 .topo{
@@ -41,24 +60,61 @@ a{ color: var(--marca); }
   top: 0;
   z-index: 10;
 }
+
 .faixa{
-  max-width: var(--largura); margin: 0 auto; padding: .9rem 1.2rem;
-  display: flex; flex-wrap: wrap; gap: .8rem;
-  align-items: center; justify-content: space-between;
+  max-width: var(--largura); 
+  margin: 0 auto; 
+  padding: .9rem 1.2rem;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .8rem;
+  align-items: center; 
+  justify-content: space-between;
 }
-.marca{ color: #fff; font-weight: 700; }
-.topo nav{ display: flex; gap: 1.2rem; }
-.topo nav a{ color: #d8ddd6; text-decoration: none; font-size: .95rem; }
-.topo nav a:hover{ color: var(--sinal); }
+
+.marca{ 
+  color: #fff; 
+  font-weight: 700; 
+}
+
+.topo nav{ 
+  display: flex; 
+  gap: 1.2rem; 
+}
+
+.topo nav a{ 
+  color: #d8ddd6; 
+  text-decoration: none; 
+  font-size: .95rem; 
+}
+
+.topo nav a:hover{ 
+  color: var(--sinal); 
+}
 
 /* --------- CAPA --------- */
-.capa{ position: relative; background: var(--tinta); }
-.capa > img{ width: 100%; height: 420px; object-fit: cover; opacity: .55; display: block; }
+.capa{ 
+  position: relative; 
+  background: var(--tinta); 
+}
+
+.capa > img{ 
+  width: 100%; 
+  height: 420px; 
+  object-fit: cover; 
+  opacity: .55; 
+  display: block; }
 
 .capa-conteudo-lateral{
-  position: absolute; inset: 0;
-  max-width: 1300px; margin: 0 auto; padding: 2rem 1.2rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+  position: absolute; 
+  inset: 0;
+  max-width: 1080px; 
+  margin: 0 auto; 
+  padding: 2rem 1.2rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 2rem;
   color: #c2dcff;
   flex-wrap: wrap; /* Se a tela for pequena, ajusta os elementos empilhando-os */
 }
@@ -66,11 +122,26 @@ a{ color: var(--marca); }
 .capa-texto{
   flex: 1;
   min-width: 280px;
-  display: flex; flex-direction: column; justify-content: center;
-  align-items: flex-start; gap: 1rem;
+  display: flex; flex-direction: column; 
+  justify-content: center;
+  align-items: flex-start; 
+  gap: 1rem;
 }
-.capa-texto h1{ max-width: 16ch; }
-.capa-texto p{ max-width: 46ch; }
+
+.capa-texto h1{ 
+  max-width: 16ch; 
+}
+
+.capa-texto p{ 
+  max-width: 46ch; 
+  font-weight: bold;
+}
+
+.texto-capa {
+  color: #c2dcff;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #492b29;
+}
 
 .capa-logo{
   width: 250px;
@@ -83,42 +154,93 @@ a{ color: var(--marca); }
   flex-shrink: 0;
 }
 
+.governo {
+  height: 140px;
+  padding-right: 10px;
+}
+
+.ccm {
+  height: 140px;
+  padding-left: 10px;
+}
+
 /* --------- BOTOES --------- */
 .botao{
-  display: inline-block; background: var(--sinal); color: var(--tinta);
-  border: none; padding: .75rem 1.4rem; font-size: 1rem; font-weight: 700;
-  text-decoration: none; cursor: pointer;
+  display: inline-block; 
+  background: var(--sinal); 
+  color: var(--tinta);
+  border: none; 
+  padding: .75rem 1.4rem; 
+  font-size: 1rem; 
+  font-weight: 700;
+  text-decoration: none; 
+  cursor: pointer;
 }
-.botao:hover{ background: #8bb2e4; }
+
+.botao:hover{ 
+  background: #8bb2e4; 
+}
+
 .botao-fino{
-  background: none; border: 1px solid var(--borda); color: var(--tinta);
-  padding: .4rem .8rem; font-size: .85rem; cursor: pointer;
+  background: none; 
+  border: 1px solid var(--borda); 
+  color: var(--tinta);
+  padding: .4rem .8rem; 
+  font-size: .85rem; 
+  cursor: pointer;
 }
-.botao-fino:hover{ background: var(--borda); }
-.botao-fino.perigo{ border-color: var(--alerta); color: var(--alerta); }
-.botao-fino.perigo:hover{ background: var(--alerta); color: #fff; }
+
+.botao-fino:hover{ 
+  background: var(--borda); 
+}
+.botao-fino.perigo{ 
+  border-color: var(--alerta); 
+  color: var(--alerta); 
+}
+
+.botao-fino.perigo:hover{ 
+  background: var(--alerta); 
+  color: #fff; 
+}
 
 /* Contorno visivel para quem navega pelo teclado. Nao apague. */
 a:focus-visible, button:focus-visible, input:focus-visible,
 select:focus-visible, textarea:focus-visible, label:focus-visible{
-  outline: 3px solid var(--marca); outline-offset: 2px;
+  outline: 3px solid var(--marca); 
+  outline-offset: 2px;
 }
 
 /* --------- BLOCOS --------- */
 .bloco{
-  max-width: var(--largura); margin: 0 auto;
-  padding: 3rem 1.2rem; border-bottom: 1px solid var(--borda);
+  max-width: var(--largura); 
+  margin: 0 auto;
+  padding: 3rem 1.2rem; 
+  border-bottom: 1px solid var(--borda);
 }
-.largura-texto{ max-width: 68ch; margin-bottom: .6rem; }
+
+.largura-texto{ 
+  max-width: 900px; 
+  margin-bottom: .6rem; 
+}
 
 .galeria{
-  margin-top: 1.5rem; display: grid; gap: 1.2rem;
+  margin-top: 1.5rem; 
+  display: grid; 
+  gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-.galeria img{ height: 220px; object-fit: cover; width: 400px; }
+
+.galeria img{ 
+  height: 220px; 
+  object-fit: cover;
+  width: 400px; 
+}
+
 figcaption{
-  font-size: .85rem; margin-top: .5rem;
-  border-left: 4px solid var(--sinal); padding-left: .6rem;
+  font-size: .85rem; 
+  margin-top: .5rem;
+  border-left: 4px solid var(--sinal); 
+  padding-left: .6rem;
 }
 
 /* --------- PAINEL DE NUMEROS --------- */
@@ -197,14 +319,4 @@ input, select, textarea{
   .capa img{ height: 340px; }
   .bloco{ padding: 2rem 1rem; }
   .ferramentas{ flex-direction: column; align-items: stretch; }
-}
-
-.governo {
-  height: 180px;
-  padding-right: 100px;
-}
-
-.ccm {
-  height: 180px;
-  padding-left: 100px;
 }

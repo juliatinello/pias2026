@@ -1,3 +1,5 @@
+alert("SCRIPT.JS CARREGOU!");
+
 /* =========================================================
    script.js
    Aqui fica o COMPORTAMENTO: salvar, ler, mostrar, buscar e apagar.
@@ -46,7 +48,7 @@ function mostrar(){
   const escolhida = filtro.value;
 
   const visiveis = fichas.filter(function(f){
-    const passaFiltro = (escolhida === "todas") || (f.socialEAmbiental === escolhida);
+    const passaFiltro = true;
     const textoTodo = Object.values(f).join(" ").toLowerCase();
     const passaBusca = (termo === "") || (textoTodo.indexOf(termo) >= 0);
     return passaFiltro && passaBusca;
@@ -65,13 +67,15 @@ function mostrar(){
     cartao.className = "cartao";
     cartao.setAttribute("data-categoria", f.socialEAmbiental);
     let html = "";
-    html += "<h3>" + escapar(f.patinhasFelizes) + "</h3>";
-    html += '<span class="etiqueta">' + escapar(f.socialEAmbiental) + "</span>";
-    html += "<p><b>Paraná:</b> " + escapar(f.parana) + "</p>";
-    html += "<p><b>3:</b> " + escapar(f.3) + "</p>";
-    html += "<p><b>Fotos e logo:</b> " + escapar(f.fotosELogo) + "</p>";
-    html += '<footer><small>' + escapar(f.data) + '</small>' +
-            '<button type="button" class="apagar" data-id="' + f.id + '">Apagar</button></footer>';
+    html += '<p class="numero-registro"><b>Registro nº' + escapar(String(f.numeroRegistro)) + "</b></p>";
+    html += "<h3>" + escapar(f.animal) + "</h3>";
+    html += '<span class="etiqueta">' + escapar(f.tamanho) + "</span>";
+    html += "<p><b>Quantidade:</b> " + escapar(String(f.quantidade)) + "</p>";
+    html += "<p><b>Cidade:</b> " + escapar(f.cidade) + "</p>";
+    html += "<p><b>ONG:</b> " + escapar(f.ong) + "</p>";
+    html += "<p><b>Número:</b> " + escapar(f.numeroOng) + "</p>";
+    html += '<p><b>Data e hora:</b> ' + escapar(f.data) + "</p>";
+    html += '<footer><button type="button" class="apagar" data-id="' + f.id + '">Apagar</button></footer>';
     cartao.innerHTML = html;
     listaEl.appendChild(cartao);
   });
@@ -81,41 +85,69 @@ function mostrar(){
 
 /* ---------- 5. O PAINEL de numeros ----------
    E daqui que sai o dado que voce vai mostrar na apresentacao. */
-function desenharPainel(fichas){
+function desenharPainel(fichas) {
   let html = "";
+
   html += '<div class="numero"><b>' + fichas.length + "</b><span>registros no total</span></div>";
-  const soma = fichas.reduce(function(total, f){ return total + Number(f.3 || 0); }, 0);
-  html += '<div class="numero"><b>' + soma + "</b><span>3, somando tudo</span></div>";
+
+  const soma = fichas.reduce(function(total, f) {
+    return total + Number(f.quantidade || 0);
+  }, 0);
+
+  html += '<div class="numero"><b>' + soma + "</b><span>animais, somando tudo</span></div>";
+
   const porCategoria = {};
-  fichas.forEach(function(f){ porCategoria[f.socialEAmbiental] = (porCategoria[f.socialEAmbiental] || 0) + 1; });
-  Object.keys(porCategoria).forEach(function(nome){
-    html += '<div class="numero pequeno"><b>' + porCategoria[nome] + "</b><span>" + escapar(nome) + "</span></div>";
+
+  fichas.forEach(function(f) {
+    porCategoria[f.animal] = (porCategoria[f.animal] || 0) + 1;
   });
+
+  Object.keys(porCategoria).forEach(function(nome) {
+    html += '<div class="numero pequeno"><b>' +
+      porCategoria[nome] +
+      "</b><span>" +
+      escapar(nome) +
+      "</span></div>";
+  });
+
   painel.innerHTML = html;
 }
 
+const ong = document.getElementById("ong");
+const numeroOng = document.getElementById("numeroOng");
+
+ong.addEventListener("change", function () {
+  const opcaoSelecionada = ong.options[ong.selectedIndex];
+
+  numeroOng.value = opcaoSelecionada.dataset.numero || "";
+});
+
 /* ---------- 6. SALVAR quando o formulario for enviado ---------- */
 formulario.addEventListener("submit", function(evento){
-  evento.preventDefault();   // impede a pagina de recarregar
-
-  const nova = {
-    id: Date.now(),          // numero unico: a hora exata em milissegundos
-    patinhasFelizes: document.getElementById("patinhasFelizes").value.trim(),
-    socialEAmbiental: document.getElementById("socialEAmbiental").value.trim(),
-    parana: document.getElementById("parana").value.trim(),
-    3: Number(document.getElementById("3").value),
-    fotosELogo: document.getElementById("fotosELogo").value.trim(),
-    data: new Date().toLocaleDateString("pt-BR")
-  };
+  evento.preventDefault();
 
   const fichas = lerFichas();
-  fichas.unshift(nova);      // unshift coloca no comeco da lista
+
+  const nova = {
+  id: Date.now(),
+
+  animal: document.getElementById("animal").value,
+  quantidade: Number(document.getElementById("quantidade").value),
+  tamanho: document.getElementById("tamanho").value,
+  cidade: document.getElementById("cidade").value.trim(),
+  ong: document.getElementById("ong").value,
+  numeroOng: document.getElementById("numeroOng").value,
+
+  data: new Date().toLocaleString("pt-BR")
+  };
+
+  fichas.unshift(nova);
   gravarFichas(fichas);
 
   formulario.reset();
+  numeroOng.value = "";
+
   mostrar();
-  aviso.textContent = "Registro salvo. Recarregue a pagina para conferir que ele continua ai.";
-  setTimeout(function(){ aviso.textContent = ""; }, 4000);
 });
 
 /* ---------- 7. APAGAR um registro ----------

@@ -129,16 +129,17 @@ formulario.addEventListener("submit", function(evento){
   const fichas = lerFichas();
 
   const nova = {
-  id: Date.now(),
+    id: Date.now(),
+    numeroRegistro: fichas.length + 1,
 
-  animal: document.getElementById("animal").value,
-  quantidade: Number(document.getElementById("quantidade").value),
-  tamanho: document.getElementById("tamanho").value,
-  cidade: document.getElementById("cidade").value.trim(),
-  ong: document.getElementById("ong").value,
-  numeroOng: document.getElementById("numeroOng").value,
+    animal: document.getElementById("animal").value,
+    quantidade: Number(document.getElementById("quantidade").value),
+    tamanho: document.getElementById("tamanho").value,
+    cidade: document.getElementById("cidade").value.trim(),
+    ong: document.getElementById("ong").value,
+    numeroOng: document.getElementById("numeroOng").value,
 
-  data: new Date().toLocaleString("pt-BR")
+    data: new Date().toLocaleString("pt-BR")
   };
 
   fichas.unshift(nova);
